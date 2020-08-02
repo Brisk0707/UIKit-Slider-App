@@ -13,6 +13,7 @@
 		DAFDA1B424D5D7BE0082D740 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAFDA1B324D5D7BE0082D740 /* Assets.xcassets */; };
 		DAFDA1B724D5D7BE0082D740 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAFDA1B624D5D7BE0082D740 /* Preview Assets.xcassets */; };
 		DAFDA1BA24D5D7BE0082D740 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAFDA1B824D5D7BE0082D740 /* LaunchScreen.storyboard */; };
+		DAFDA1C424D5D9170082D740 /* SliderUiKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFDA1C324D5D9170082D740 /* SliderUiKit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		DAFDA1B624D5D7BE0082D740 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DAFDA1B924D5D7BE0082D740 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DAFDA1BB24D5D7BE0082D740 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DAFDA1C324D5D9170082D740 /* SliderUiKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderUiKit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				DAFDA1AD24D5D7BD0082D740 /* AppDelegate.swift */,
 				DAFDA1AF24D5D7BD0082D740 /* SceneDelegate.swift */,
+				DAFDA1C324D5D9170082D740 /* SliderUiKit.swift */,
 				DAFDA1B124D5D7BD0082D740 /* ContentView.swift */,
 				DAFDA1B324D5D7BE0082D740 /* Assets.xcassets */,
 				DAFDA1B824D5D7BE0082D740 /* LaunchScreen.storyboard */,
@@ -147,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAFDA1AE24D5D7BD0082D740 /* AppDelegate.swift in Sources */,
+				DAFDA1C424D5D9170082D740 /* SliderUiKit.swift in Sources */,
 				DAFDA1B024D5D7BD0082D740 /* SceneDelegate.swift in Sources */,
 				DAFDA1B224D5D7BD0082D740 /* ContentView.swift in Sources */,
 			);
