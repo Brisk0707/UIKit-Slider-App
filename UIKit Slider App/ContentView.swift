@@ -15,7 +15,9 @@ struct ContentView: View {
     var body: some View {
         
         VStack {
+            
             Text("Подвиньте слайдер как можно ближе к: \(randomValue)")
+            
             HStack {
                 Text("0")
                 SliderUiKit(value: $value,
@@ -24,13 +26,14 @@ struct ContentView: View {
                     .frame(width: 300)
                 Text("100")
             }
+            
             Button(action: {self.alertIsShowing = true}) {
                 Text("Проверь меня!")
             }.padding()
                 .alert(isPresented: $alertIsShowing, content: {
                     Alert(title: Text("Your score is"),
                           message: Text("\(computeScore())"),
-                        dismissButton: .default(Text("Ok")))
+                          dismissButton: .default(Text("Ok")))
                 })
             
             Button(action: {self.randomValue = Int.random(in: 0...100)}) {
@@ -39,7 +42,7 @@ struct ContentView: View {
         }
         
     }
-    public func computeScore() -> Int {
+    private func computeScore() -> Int {
         let difference = abs(randomValue - lround(value))
         return 100 - difference
     }

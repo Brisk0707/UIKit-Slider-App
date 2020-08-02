@@ -34,11 +34,11 @@ struct SliderUiKit: UIViewRepresentable {
         Coordinator(value: $value)
     }
     
-    func computeScore() -> Int {
+    private func computeScore() -> Int {
         let difference = abs(randomValue - lround(value))
         return 100 - difference
     }
-
+    
     typealias UIViewType = UISlider
     
 }
