@@ -9,46 +9,49 @@
 import SwiftUI
 
 struct SliderUiKit: UIViewRepresentable {
-
     
-    @Binding var alphaValue: CGFloat
     @Binding var value: Double
+    @Binding var randomValue: Int
     
     func makeUIView(context: Context) -> UISlider {
         let slider = UISlider(frame: .zero)
         slider.minimumValue = 0
-        slider.maximumValue = 255
-        //slider.alpha = alphaValue
+        slider.maximumValue = 100
+        slider.value = Float(value)
         slider.addTarget(context.coordinator,
                          action: #selector(Coordinator.valueChanged(_:)) ,
                          for: .valueChanged)
-        
         
         return slider
     }
     
     func updateUIView(_ uiView: UISlider, context: Context) {
         uiView.value = Float(value)
-        uiView.alpha = alphaValue
+        uiView.alpha = CGFloat(computeScore()) / 100
     }
     
     func makeCoordinator() -> SliderUiKit.Coordinator {
-    Coordinator(value: $value)
+        Coordinator(value: $value)
     }
     
+    func computeScore() -> Int {
+        let difference = abs(randomValue - lround(value))
+        return 100 - difference
+    }
+
     typealias UIViewType = UISlider
     
 }
 
 extension SliderUiKit {
     class Coordinator: NSObject {
-       @Binding var value: Double
+        @Binding var value: Double
         
         init(value: Binding<Double>) {
             self._value = value
         }
         
-       @objc func valueChanged(_ sender: UISlider) {
+        @objc func valueChanged(_ sender: UISlider) {
             value = Double(sender.value)
         }
     }
@@ -56,7 +59,6 @@ extension SliderUiKit {
 
 struct SliderUiKit_Previews: PreviewProvider {
     static var previews: some View {
-        SliderUiKit(alphaValue: .constant(50), value: .constant(40))
-        
+        SliderUiKit(value: .constant(0), randomValue: .constant(50))
     }
 }
